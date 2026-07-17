@@ -30,7 +30,13 @@ public class ParkingGarage {
             return amount;
     }
 
-    public void getVehiclesParkedLongerThan(int hours){
-
+    public List<String> getVehiclesParkedLongerThan(int hours){
+        List<String> licensePlates = new ArrayList<>();
+        for(ParkingRecord parkingRecord : parkingRecords){
+            if(parkingRecord.getHour() > hours){
+                licensePlates.add(parkingRecord.getLicensePlate());
+            }
+        }
+        return licensePlates;
     }
 }

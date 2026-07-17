@@ -12,4 +12,12 @@ public abstract class ParkingRecord {
     }
 
     public abstract double getPrice();
+
+    public int getHour(){
+        return hour;
+    }
+
+    public String getLicensePlate() {
+        return licensePlate;
+    }
 }
