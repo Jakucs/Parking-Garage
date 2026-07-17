@@ -8,4 +8,8 @@ public class Car extends ParkingRecord{
         super(licensePlate, hour);
         this.price = 2*hour;
     }
+
+    public double getPrice(){
+        return price;
+    }
 }

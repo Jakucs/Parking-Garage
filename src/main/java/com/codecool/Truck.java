@@ -10,4 +10,8 @@ public class Truck extends ParkingRecord{
         this.weight = weight;
         this.price = (4 * hour) + (0.01*weight);
     }
+
+    public double getPrice() {
+        return price;
+    }
 }
