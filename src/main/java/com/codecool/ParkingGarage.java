@@ -2,17 +2,18 @@ package com.codecool;
 
 import java.io.InvalidClassException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingGarage {
     private String name;
-    List<ParkingRecord> parkingRecords;
+    List<ParkingRecord> parkingRecords = new ArrayList<>();
 
     public ParkingGarage(String name){
         this.name = name;
     }
 
-    public void addRecords(ParkingRecord parkingRecord){
+    public void addRecord(ParkingRecord parkingRecord){
         parkingRecords.add(parkingRecord);
     }
 
@@ -20,16 +21,14 @@ public class ParkingGarage {
         if(!(parkingRecord instanceof Car || parkingRecord instanceof Truck)){
             throw new InvalidClassException("Class is not valid.");
         }
-        Car car = new Car("ASD-123", 4);
-        Truck truck = new Truck("ASD-234", 2);
-        if(parkingRecord instanceof Car){
-            return car.getPrice();
-        }else {
-            return truck.getPrice();
+        double amount = 0;
+        for(ParkingRecord record : parkingRecords){
+            amount += record.getPrice();
         }
+            return amount;
     }
 
     public void getVehiclesParkedLongerThan(int hours){
-        
+
     }
 }

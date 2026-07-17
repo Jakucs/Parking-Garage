@@ -10,4 +10,6 @@ public abstract class ParkingRecord {
         this.licensePlate = licensePlate;
         this.hour = hour;
     }
+
+    public abstract double getPrice();
 }
