@@ -23,7 +23,9 @@ public class ParkingGarage {
         }
         double amount = 0;
         for(ParkingRecord record : parkingRecords){
-            amount += record.getPrice();
+            if(record.getClass() == parkingRecord.getClass()){
+                amount += record.getPrice();
+            }
         }
             return amount;
     }
